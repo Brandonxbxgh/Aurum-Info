@@ -177,6 +177,11 @@ a:hover {
   font-size: 1.125rem;
 }
 
+.btn-small {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.875rem;
+}
+
 .btn.copied {
   background: linear-gradient(135deg, var(--color-green), #059669);
 }

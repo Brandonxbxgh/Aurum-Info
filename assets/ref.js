@@ -7,13 +7,14 @@
   'use strict';
 
   const STORAGE_KEY = 'aurum_ref';
-  const DEFAULT_SIGNUP_URL = 'https://app.aurum.com/signup';
+  const DEFAULT_SIGNUP_URL = 'https://backoffice.aurum.foundation/auth/sign-up';
   const REF_PARAM = 'ref';
 
   /**
-   * Get referral code from URL or localStorage
+   * Get referral URL from URL parameters or localStorage
+   * If ref contains a full URL, it's stored and returned as-is
    */
-  function getReferralCode() {
+  function getReferralUrl() {
     // First, check URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const urlRef = urlParams.get(REF_PARAM);
@@ -34,21 +35,21 @@
   }
 
   /**
-   * Build signup URL with referral code
+   * Build signup URL - use referral URL directly if it's a full URL,
+   * otherwise use the default signup URL
    */
-  function buildSignupUrl(baseUrl, refCode) {
-    if (!refCode) {
-      return baseUrl || DEFAULT_SIGNUP_URL;
+  function buildSignupUrl(refUrl) {
+    if (!refUrl) {
+      return DEFAULT_SIGNUP_URL;
     }
     
-    try {
-      const url = new URL(baseUrl || DEFAULT_SIGNUP_URL);
-      url.searchParams.set(REF_PARAM, refCode);
-      return url.toString();
-    } catch (e) {
-      console.warn('Invalid URL:', baseUrl);
-      return baseUrl || DEFAULT_SIGNUP_URL;
+    // Check if refUrl is a full URL (starts with http:// or https://)
+    if (refUrl.startsWith('http://') || refUrl.startsWith('https://')) {
+      return refUrl;
     }
+    
+    // If it's not a full URL, use default
+    return DEFAULT_SIGNUP_URL;
   }
 
   /**
@@ -91,13 +92,11 @@
    * Initialize referral system on page load
    */
   function initReferralSystem() {
-    const refCode = getReferralCode();
+    const refUrl = getReferralUrl();
+    const finalUrl = buildSignupUrl(refUrl);
     
     // Update all elements with data-ref-cta attribute
     document.querySelectorAll('[data-ref-cta]').forEach(element => {
-      const baseUrl = element.getAttribute('data-ref-cta') || element.href || DEFAULT_SIGNUP_URL;
-      const finalUrl = buildSignupUrl(baseUrl, refCode);
-      
       if (element.tagName === 'A') {
         element.href = finalUrl;
       } else if (element.tagName === 'BUTTON') {
@@ -129,21 +128,6 @@
         });
       });
     });
-
-    // Handle encoded referral URLs
-    document.querySelectorAll('[data-encoded-ref]').forEach(element => {
-      try {
-        const encoded = element.getAttribute('data-encoded-ref');
-        const decoded = decodeURIComponent(encoded);
-        const finalUrl = buildSignupUrl(decoded, refCode);
-        
-        if (element.tagName === 'A') {
-          element.href = finalUrl;
-        }
-      } catch (e) {
-        console.warn('Failed to decode referral URL:', e);
-      }
-    });
   }
 
   // Initialize when DOM is ready
@@ -155,7 +139,7 @@
 
   // Export API for programmatic access
   window.AurumReferral = {
-    getReferralCode,
+    getReferralUrl,
     buildSignupUrl,
     getMyReferralLink,
     copyToClipboard,
