@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your Aurum referral link">
+  <title>Aurum - Referral Settings</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav class="container">
+      <a href="/" class="logo">AURUM</a>
+      <ul class="nav-links">
+        <li><a href="/">Overview</a></li>
+        <li><a href="/partner.html">Partner Program</a></li>
+        <li><a href="/get-started.html">Get Started</a></li>
+        <li><a href="/set.html" class="active">Referral Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Referral Settings</h1>
+      <p>Manage your referral link and track your referral status.</p>
+    </div>
+  </section>
+
+  <!-- Referral Manager -->
+  <section>
+    <div class="container">
+      <div class="referral-manager">
+        <h2 class="section-title">Your Referral Information</h2>
+        
+        <!-- Current Status -->
+        <div class="referral-status" id="referralStatus">
+          <h3>Current Status</h3>
+          <p><strong>Referral Code:</strong> <span id="currentReferral">None set</span></p>
+          <p><strong>Your Referral Link:</strong></p>
+          <div class="referral-link-display" id="currentLink">No referral code set</div>
+        </div>
+        
+        <!-- Alerts -->
+        <div class="alert alert-success" id="successAlert">
+          <strong>Success!</strong> Your referral code has been saved.
+        </div>
+        
+        <div class="alert alert-info" id="infoAlert">
+          <strong>Info:</strong> Link copied to clipboard!
+        </div>
+        
+        <div class="alert alert-warning" id="warningAlert">
+          <strong>Warning:</strong> Please enter a valid referral code.
+        </div>
+        
+        <!-- Set Referral Form -->
+        <div style="margin-top: 2rem;">
+          <h3>Set Your Referral Code</h3>
+          <p class="text-muted">Enter your unique referral code to generate your shareable link.</p>
+          
+          <div class="form-group">
+            <label for="referralInput">Referral Code</label>
+            <input type="text" id="referralInput" placeholder="Enter your referral code (e.g., USER123)" />
+          </div>
+          
+          <div class="button-group">
+            <button class="btn btn-primary" id="saveReferralBtn">Save Referral Code</button>
+            <button class="btn btn-secondary" id="clearReferralBtn">Clear Referral Code</button>
+          </div>
+        </div>
+        
+        <!-- Actions -->
+        <div style="margin-top: 2rem;">
+          <h3>Share Your Link</h3>
+          <p class="text-muted">Once you've set your referral code, you can copy and share your unique link.</p>
+          
+          <div class="button-group">
+            <button class="btn btn-primary" id="copyLinkBtn">Copy Referral Link</button>
+            <button class="btn btn-secondary" id="copyHomeBtn">Copy Home Page Link</button>
+            <button class="btn btn-secondary" id="copyPartnerBtn">Copy Partner Page Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Use Section -->
+  <section style="background-color: #1A1A1A;">
+    <div class="container">
+      <h2 class="section-title">How to Use Your Referral Link</h2>
+      
+      <div class="card-grid">
+        <div class="card">
+          <h3>1. Set Your Code</h3>
+          <p>Enter your unique referral code in the form above. This is typically provided when you join the partner program.</p>
+        </div>
+        
+        <div class="card">
+          <h3>2. Copy Your Link</h3>
+          <p>Click the copy button to copy your referral link to your clipboard. You can copy links for different pages.</p>
+        </div>
+        
+        <div class="card">
+          <h3>3. Share with Others</h3>
+          <p>Share your link via social media, email, messaging apps, or any other channel where you connect with your audience.</p>
+        </div>
+        
+        <div class="card">
+          <h3>4. Track Referrals</h3>
+          <p>When someone uses your link, their referral is automatically tracked. Monitor your performance in your partner dashboard.</p>
+        </div>
+        
+        <div class="card">
+          <h3>5. Persist Across Pages</h3>
+          <p>Once someone visits any page with your referral code, it's stored and persists as they navigate the site.</p>
+        </div>
+        
+        <div class="card">
+          <h3>6. Dynamic CTAs</h3>
+          <p>All "Get Started" and CTA buttons automatically include your referral code when someone visits via your link.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips for Success -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Tips for Successful Referrals</h2>
+      
+      <div class="content-block image-left">
+        <div class="content-image">
+          <div style="background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 20 L50 80 M30 40 L50 20 L70 40" stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="50" cy="70" r="8" fill="#D4AF37"/>
+            </svg>
+          </div>
+        </div>
+        <div class="content-text">
+          <h3>Best Practices</h3>
+          <ul class="features-list">
+            <li>Share your link in contexts where it provides value to your audience</li>
+            <li>Explain what Aurum is and why you recommend it</li>
+            <li>Be transparent that you're sharing a referral link</li>
+            <li>Target audiences who would genuinely benefit from Aurum</li>
+            <li>Follow up with referrals to help them get started</li>
+            <li>Stay compliant with platform rules and regulations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testing Your Link -->
+  <section style="background-color: #1A1A1A;">
+    <div class="container">
+      <h2 class="section-title">Testing Your Referral Link</h2>
+      
+      <div class="content-text">
+        <p>To test that your referral link is working correctly:</p>
+        <ol style="margin-left: 2rem; color: var(--color-text-muted);">
+          <li>Set your referral code using the form above</li>
+          <li>Copy one of your referral links</li>
+          <li>Open a new incognito/private browsing window</li>
+          <li>Paste and visit the link</li>
+          <li>Navigate to this settings page</li>
+          <li>Your referral code should appear in the "Current Status" section</li>
+        </ol>
+        <p class="mt-2">This demonstrates that the referral tracking is working and persisting across pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="card">
+        <h3>What if I don't have a referral code yet?</h3>
+        <p>Referral codes are typically provided when you enroll in the Aurum Partner Program. Visit the <a href="/partner.html" style="color: var(--color-primary);">Partner Program page</a> to learn more about joining.</p>
+      </div>
+      
+      <div class="card">
+        <h3>Can I change my referral code?</h3>
+        <p>You can update the code stored in your browser anytime using this page. However, the official referral code assigned to you is fixed and provided by Aurum.</p>
+      </div>
+      
+      <div class="card">
+        <h3>How long does the referral tracking last?</h3>
+        <p>The referral code is stored in the visitor's browser using localStorage and persists until they clear their browser data or you clear the code.</p>
+      </div>
+      
+      <div class="card">
+        <h3>What happens if someone visits without a referral link?</h3>
+        <p>If no referral code is present, CTAs will use a default link. The visitor can still access all site features normally.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Aurum. All rights reserved.</p>
+      <p>
+        <a href="/">Overview</a> |
+        <a href="/partner.html">Partner Program</a> |
+        <a href="/get-started.html">Get Started</a> |
+        <a href="/set.html">Settings</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Referral Script -->
+  <script src="/assets/ref.js"></script>
+  
+  <!-- Page-Specific Script -->
+  <script>
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get elements
+      const referralInput = document.getElementById('referralInput');
+      const saveReferralBtn = document.getElementById('saveReferralBtn');
+      const clearReferralBtn = document.getElementById('clearReferralBtn');
+      const copyLinkBtn = document.getElementById('copyLinkBtn');
+      const copyHomeBtn = document.getElementById('copyHomeBtn');
+      const copyPartnerBtn = document.getElementById('copyPartnerBtn');
+      
+      const currentReferral = document.getElementById('currentReferral');
+      const currentLink = document.getElementById('currentLink');
+      
+      const successAlert = document.getElementById('successAlert');
+      const infoAlert = document.getElementById('infoAlert');
+      const warningAlert = document.getElementById('warningAlert');
+      
+      // Hide all alerts initially
+      function hideAllAlerts() {
+        successAlert.classList.remove('show');
+        infoAlert.classList.remove('show');
+        warningAlert.classList.remove('show');
+      }
+      
+      // Show alert temporarily
+      function showAlert(alertElement, duration = 3000) {
+        hideAllAlerts();
+        alertElement.classList.add('show');
+        setTimeout(() => {
+          alertElement.classList.remove('show');
+        }, duration);
+      }
+      
+      // Update display
+      function updateDisplay() {
+        const ref = AurumReferral.getReferral();
+        if (ref) {
+          currentReferral.textContent = ref;
+          currentLink.textContent = AurumReferral.getReferralLink();
+          referralInput.value = ref;
+        } else {
+          currentReferral.textContent = 'None set';
+          currentLink.textContent = 'No referral code set';
+          referralInput.value = '';
+        }
+      }
+      
+      // Initial display update
+      updateDisplay();
+      
+      // Save referral code
+      saveReferralBtn.addEventListener('click', function() {
+        const code = referralInput.value.trim();
+        if (code) {
+          AurumReferral.setReferral(code);
+          updateDisplay();
+          showAlert(successAlert);
+        } else {
+          showAlert(warningAlert);
+        }
+      });
+      
+      // Clear referral code
+      clearReferralBtn.addEventListener('click', function() {
+        AurumReferral.clearReferral();
+        updateDisplay();
+        showAlert(infoAlert);
+        infoAlert.innerHTML = '<strong>Cleared!</strong> Referral code has been removed.';
+      });
+      
+      // Copy main referral link
+      copyLinkBtn.addEventListener('click', async function() {
+        const success = await AurumReferral.copyReferralLink();
+        if (success) {
+          showAlert(infoAlert);
+          infoAlert.innerHTML = '<strong>Success!</strong> Referral link copied to clipboard.';
+        } else {
+          showAlert(warningAlert);
+          warningAlert.innerHTML = '<strong>Error:</strong> Could not copy to clipboard.';
+        }
+      });
+      
+      // Copy home page link with referral
+      copyHomeBtn.addEventListener('click', async function() {
+        const link = AurumReferral.getShareableLink('/');
+        try {
+          await navigator.clipboard.writeText(link);
+          showAlert(infoAlert);
+          infoAlert.innerHTML = '<strong>Success!</strong> Home page link copied to clipboard.';
+        } catch (err) {
+          showAlert(warningAlert);
+          warningAlert.innerHTML = '<strong>Error:</strong> Could not copy to clipboard.';
+        }
+      });
+      
+      // Copy partner page link with referral
+      copyPartnerBtn.addEventListener('click', async function() {
+        const link = AurumReferral.getShareableLink('/partner.html');
+        try {
+          await navigator.clipboard.writeText(link);
+          showAlert(infoAlert);
+          infoAlert.innerHTML = '<strong>Success!</strong> Partner page link copied to clipboard.';
+        } catch (err) {
+          showAlert(warningAlert);
+          warningAlert.innerHTML = '<strong>Error:</strong> Could not copy to clipboard.';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
