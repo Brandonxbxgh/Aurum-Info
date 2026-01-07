@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get started with Aurum AI trading bots">
+  <title>Aurum - Get Started</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .onboarding-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-2xl);
+      flex-wrap: wrap;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--color-surface);
+      border: 2px solid var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      transition: all 0.3s ease;
+    }
+
+    .step.active .step-number {
+      background-color: var(--color-gold);
+      border-color: var(--color-gold);
+      color: var(--color-bg-primary);
+    }
+
+    .step.completed .step-number {
+      background-color: var(--color-green);
+      border-color: var(--color-green);
+      color: white;
+    }
+
+    .step-divider {
+      width: 40px;
+      height: 2px;
+      background-color: var(--color-text-muted);
+    }
+
+    .onboarding-step {
+      display: none;
+    }
+
+    .onboarding-step.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+
+    @media (min-width: 768px) {
+      .option-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .option-card {
+      background-color: var(--color-surface);
+      border: 2px solid var(--color-surface);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-lg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .option-card:hover {
+      border-color: var(--color-gold);
+      transform: translateY(-2px);
+    }
+
+    .option-card.selected {
+      border-color: var(--color-gold);
+      background-color: rgba(251, 191, 36, 0.1);
+    }
+
+    .option-card input[type="radio"] {
+      display: none;
+    }
+
+    .option-icon {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .option-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .option-description {
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      margin-top: var(--spacing-xl);
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">AURUM</a>
+      <ul class="nav-links">
+        <li><a href="bots.html" class="nav-link">Bots</a></li>
+        <li><a href="onboarding.html" class="nav-link">Get Started</a></li>
+        <li><a href="#" class="btn btn-primary btn-small" data-ref-cta="https://app.aurum.com/signup">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Onboarding Flow -->
+  <section class="section">
+    <div class="container onboarding-container">
+      <h1 class="text-center mb-4">Let's Find Your Perfect Trading Bot</h1>
+      
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="step active" data-step="1">
+          <div class="step-number">1</div>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step" data-step="2">
+          <div class="step-number">2</div>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step" data-step="3">
+          <div class="step-number">3</div>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step" data-step="4">
+          <div class="step-number">4</div>
+        </div>
+      </div>
+
+      <!-- Step 1: Experience Level -->
+      <div class="onboarding-step active" id="step-1">
+        <div class="card">
+          <h2 class="text-center mb-3">What's your trading experience?</h2>
+          <p class="text-center text-muted mb-4">
+            This helps us recommend the right bot complexity for you.
+          </p>
+
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="experience" value="beginner">
+              <div class="option-icon">🌱</div>
+              <div class="option-title">Beginner</div>
+              <div class="option-description">
+                New to crypto trading
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="experience" value="intermediate">
+              <div class="option-icon">📊</div>
+              <div class="option-title">Intermediate</div>
+              <div class="option-description">
+                Some trading experience
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="experience" value="advanced">
+              <div class="option-icon">🎯</div>
+              <div class="option-title">Advanced</div>
+              <div class="option-description">
+                Experienced trader
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="experience" value="expert">
+              <div class="option-icon">🏆</div>
+              <div class="option-title">Expert</div>
+              <div class="option-description">
+                Professional trader
+              </div>
+            </label>
+          </div>
+
+          <div class="button-group">
+            <button class="btn btn-primary btn-large" onclick="nextStep()" disabled id="step-1-next">
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Trading Style -->
+      <div class="onboarding-step" id="step-2">
+        <div class="card">
+          <h2 class="text-center mb-3">What's your preferred trading style?</h2>
+          <p class="text-center text-muted mb-4">
+            Different bots excel at different strategies.
+          </p>
+
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="style" value="scalping">
+              <div class="option-icon">⚡</div>
+              <div class="option-title">Scalping</div>
+              <div class="option-description">
+                Quick trades, small profits
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="style" value="day-trading">
+              <div class="option-icon">📈</div>
+              <div class="option-title">Day Trading</div>
+              <div class="option-description">
+                Intraday positions
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="style" value="swing">
+              <div class="option-icon">🌊</div>
+              <div class="option-title">Swing Trading</div>
+              <div class="option-description">
+                Multi-day positions
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="style" value="long-term">
+              <div class="option-icon">🎯</div>
+              <div class="option-title">Long-term</div>
+              <div class="option-description">
+                Position building
+              </div>
+            </label>
+          </div>
+
+          <div class="button-group">
+            <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+            <button class="btn btn-primary btn-large" onclick="nextStep()" disabled id="step-2-next">
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Risk Tolerance -->
+      <div class="onboarding-step" id="step-3">
+        <div class="card">
+          <h2 class="text-center mb-3">What's your risk tolerance?</h2>
+          <p class="text-center text-muted mb-4">
+            We'll configure appropriate risk management settings.
+          </p>
+
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="risk" value="conservative">
+              <div class="option-icon">🛡️</div>
+              <div class="option-title">Conservative</div>
+              <div class="option-description">
+                Preserve capital, low risk
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="risk" value="moderate">
+              <div class="option-icon">⚖️</div>
+              <div class="option-title">Moderate</div>
+              <div class="option-description">
+                Balanced risk/reward
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="risk" value="aggressive">
+              <div class="option-icon">🚀</div>
+              <div class="option-title">Aggressive</div>
+              <div class="option-description">
+                Higher risk, higher reward
+              </div>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="risk" value="very-aggressive">
+              <div class="option-icon">💎</div>
+              <div class="option-title">Very Aggressive</div>
+              <div class="option-description">
+                Maximum risk/reward
+              </div>
+            </label>
+          </div>
+
+          <div class="button-group">
+            <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+            <button class="btn btn-primary btn-large" onclick="nextStep()" disabled id="step-3-next">
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Recommendation -->
+      <div class="onboarding-step" id="step-4">
+        <div class="card">
+          <div class="text-center">
+            <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">🎉</div>
+            <h2 class="mb-3">Perfect! We Recommend:</h2>
+            
+            <div class="card" style="background-color: var(--color-surface); border: 2px solid var(--color-gold); margin: var(--spacing-xl) 0;">
+              <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🤖</div>
+              <h3 style="color: var(--color-gold); margin-bottom: var(--spacing-md);" id="recommended-bot">
+                EX-AI Bot
+              </h3>
+              <p class="text-muted" id="recommendation-reason">
+                Based on your preferences, EX-AI Bot is the perfect match for you. 
+                It offers the right balance of automation and performance.
+              </p>
+            </div>
+
+            <p class="text-muted mb-4">
+              You can always switch to a different bot later or run multiple bots simultaneously.
+            </p>
+
+            <div class="button-group">
+              <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+              <a href="#" class="btn btn-primary btn-large" data-ref-cta="https://app.aurum.com/signup?bot=ex-ai">
+                Get Started Now
+              </a>
+            </div>
+
+            <div style="margin-top: var(--spacing-xl);">
+              <button class="btn btn-secondary" data-copy-ref-link>
+                📋 Copy My Referral Link
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>AURUM</h4>
+          <p class="text-muted">
+            Advanced AI trading solutions for the modern cryptocurrency trader.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="bots.html" class="footer-link">Trading Bots</a></li>
+            <li><a href="onboarding.html" class="footer-link">Get Started</a></li>
+            <li><a href="#" class="footer-link">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aurum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Referral System Script -->
+  <script src="../assets/ref.js"></script>
+  
+  <!-- Onboarding Logic -->
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+    const selections = {};
+
+    // Handle option selection
+    document.querySelectorAll('.option-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const input = this.querySelector('input[type="radio"]');
+        const name = input.name;
+        
+        // Remove selected class from siblings
+        document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+          radio.closest('.option-card').classList.remove('selected');
+        });
+        
+        // Add selected class to this card
+        this.classList.add('selected');
+        input.checked = true;
+        
+        // Store selection
+        selections[name] = input.value;
+        
+        // Enable next button
+        const nextBtn = document.getElementById(`step-${currentStep}-next`);
+        if (nextBtn) {
+          nextBtn.disabled = false;
+        }
+      });
+    });
+
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        // Hide current step
+        document.getElementById(`step-${currentStep}`).classList.remove('active');
+        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
+        document.querySelector(`[data-step="${currentStep}"]`).classList.add('completed');
+        
+        currentStep++;
+        
+        // Show next step
+        document.getElementById(`step-${currentStep}`).classList.add('active');
+        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        
+        // Update recommendation on final step
+        if (currentStep === 4) {
+          updateRecommendation();
+        }
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        // Hide current step
+        document.getElementById(`step-${currentStep}`).classList.remove('active');
+        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
+        
+        currentStep--;
+        
+        // Show previous step
+        document.getElementById(`step-${currentStep}`).classList.add('active');
+        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('completed');
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function updateRecommendation() {
+      const { experience, style, risk } = selections;
+      let botName = 'EX-AI Bot';
+      let reason = 'Based on your preferences, EX-AI Bot is the perfect match for you.';
+      
+      // Simple recommendation logic
+      if (style === 'scalping') {
+        botName = 'Scalper Bot';
+        reason = 'Perfect for your preference for quick, frequent trades with small profits.';
+      } else if (style === 'swing') {
+        botName = 'Swing Bot';
+        reason = 'Ideal for capturing larger price movements over multiple days.';
+      } else if (style === 'long-term') {
+        botName = 'DCA Bot';
+        reason = 'Great for building positions over time with dollar-cost averaging.';
+      } else if (risk === 'conservative') {
+        botName = 'Grid Bot';
+        reason = 'A balanced approach that profits from market volatility with controlled risk.';
+      }
+      
+      document.getElementById('recommended-bot').textContent = botName;
+      document.getElementById('recommendation-reason').textContent = reason;
+    }
+  </script>
+</body>
+</html>
