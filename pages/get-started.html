@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get started with Aurum EX-AI Bot - Complete setup guide">
+  <title>Aurum - Get Started Guide</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .setup-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background-color: var(--color-bg-secondary);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      margin-bottom: var(--spacing-lg);
+      border-left: 4px solid var(--color-gold);
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+      color: var(--color-bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 1.5rem;
+      color: var(--color-gold);
+      margin: 0;
+    }
+
+    .step-content {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .step-content ul {
+      margin: var(--spacing-md) 0;
+      padding-left: var(--spacing-xl);
+    }
+
+    .step-content li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .warning-box {
+      background-color: rgba(251, 191, 36, 0.1);
+      border: 1px solid var(--color-gold);
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+    }
+
+    .collapsible {
+      margin-top: var(--spacing-lg);
+    }
+
+    .collapsible-header {
+      background-color: var(--color-surface);
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius-md);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .collapsible-header:hover {
+      background-color: var(--color-surface-hover);
+    }
+
+    .collapsible-content {
+      display: none;
+      padding: var(--spacing-md);
+      background-color: var(--color-surface);
+      border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+      margin-top: -8px;
+    }
+
+    .collapsible-content.active {
+      display: block;
+    }
+
+    .toggle-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.active {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">AURUM</a>
+      <ul class="nav-links">
+        <li><a href="bots.html" class="nav-link">Bots</a></li>
+        <li><a href="get-started.html" class="nav-link">Get Started</a></li>
+        <li><a href="#" class="btn btn-primary btn-small" data-ref-cta>Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="hero">
+    <div class="hero-content container">
+      <h1 class="hero-title">Get Started with EX-AI Bot</h1>
+      <p class="hero-subtitle">
+        Follow this comprehensive 8-step guide to set up your Aurum account and 
+        start trading with the EX-AI bot.
+      </p>
+    </div>
+  </section>
+
+  <!-- Setup Guide -->
+  <section class="section">
+    <div class="container setup-container">
+      
+      <!-- Step 1: VPN Setup -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <h3 class="step-title">VPN Setup (US Users)</h3>
+        </div>
+        <div class="step-content">
+          <p>If you're located in the United States or other restricted jurisdictions, you'll need a VPN to access the platform.</p>
+          <div class="warning-box">
+            <strong>⚠️ Important:</strong> Using a VPN is required for users in restricted regions to comply with platform policies.
+          </div>
+          <ul>
+            <li>Choose a reliable VPN service (ExpressVPN, NordVPN, or similar)</li>
+            <li>Connect to a server in a supported country</li>
+            <li>Verify your IP address is masked before proceeding</li>
+            <li>Keep the VPN active throughout your trading session</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 2: Create Account -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Create Your Account</h3>
+        </div>
+        <div class="step-content">
+          <p>Sign up for a new Aurum account using the button below.</p>
+          <ul>
+            <li>Click the "Create Account" button</li>
+            <li>Enter your email address and create a strong password</li>
+            <li>Complete the registration process</li>
+            <li>Verify your email address if required</li>
+          </ul>
+          <div style="margin-top: var(--spacing-md);">
+            <a href="#" class="btn btn-primary btn-large" data-ref-cta>
+              Create Account Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: No-KYC Trading -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <h3 class="step-title">No-KYC Trading</h3>
+        </div>
+        <div class="step-content">
+          <p>Aurum offers no-KYC (Know Your Customer) trading for enhanced privacy.</p>
+          <div class="warning-box">
+            <strong>💡 Note:</strong> No KYC verification is required to start trading, making onboarding fast and private.
+          </div>
+          <ul>
+            <li>Skip identity verification for basic trading</li>
+            <li>Start trading immediately after account creation</li>
+            <li>Maintain your privacy throughout the process</li>
+            <li>Optional: Complete KYC later for higher limits if needed</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 4: Deposit Funds -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Deposit Funds</h3>
+        </div>
+        <div class="step-content">
+          <p>Fund your account using one of the supported deposit methods.</p>
+          <ul>
+            <li><strong>Cryptocurrency:</strong> Deposit BTC, ETH, USDT, or other supported coins</li>
+            <li><strong>Minimum Deposit:</strong> Check platform for current minimums (typically $100-$500)</li>
+            <li><strong>Processing Time:</strong> Crypto deposits usually take 10-30 minutes depending on network</li>
+            <li><strong>Network Fees:</strong> Consider blockchain fees when choosing deposit amount</li>
+          </ul>
+          <div class="warning-box">
+            <strong>⚠️ Security Tip:</strong> Always double-check deposit addresses and use whitelisted addresses when possible.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Navigate to Bot Section -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">5</div>
+          <h3 class="step-title">Navigate to EX-AI Bot</h3>
+        </div>
+        <div class="step-content">
+          <p>Once logged in, locate the EX-AI bot in your dashboard.</p>
+          <ul>
+            <li>Go to the "Bots" or "Trading Bots" section in your dashboard</li>
+            <li>Find "EX-AI Bot" in the list of available bots</li>
+            <li>Click to view bot details and configuration options</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 6: Configure EX-AI Bot -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">6</div>
+          <h3 class="step-title">Configure Bot Settings</h3>
+        </div>
+        <div class="step-content">
+          <p>Set up your EX-AI bot parameters based on your risk tolerance and trading goals.</p>
+          <ul>
+            <li><strong>Trading Pair:</strong> Select which cryptocurrency pairs to trade (e.g., BTC/USDT, ETH/USDT)</li>
+            <li><strong>Investment Amount:</strong> Choose how much capital to allocate to the bot</li>
+            <li><strong>Risk Level:</strong> Set risk parameters (Conservative, Moderate, or Aggressive)</li>
+            <li><strong>Stop Loss:</strong> Configure automatic stop-loss percentage (recommended: 5-10%)</li>
+            <li><strong>Take Profit:</strong> Set target profit levels for automatic exits</li>
+          </ul>
+          <div class="warning-box">
+            <strong>💡 Tip:</strong> Start with conservative settings and smaller amounts until you're comfortable with how the bot operates.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7: Activate Bot -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">7</div>
+          <h3 class="step-title">Activate EX-AI Bot</h3>
+        </div>
+        <div class="step-content">
+          <p>Review your settings and activate the bot to start automated trading.</p>
+          <ul>
+            <li>Double-check all configuration settings</li>
+            <li>Review risk management parameters</li>
+            <li>Click "Activate" or "Start Trading" button</li>
+            <li>Confirm the activation when prompted</li>
+          </ul>
+          <p style="margin-top: var(--spacing-md);">
+            <strong>✅ Congratulations!</strong> Your EX-AI bot is now active and will begin trading automatically based on your settings.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 8: Monitor Performance -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">8</div>
+          <h3 class="step-title">Monitor & Optimize</h3>
+        </div>
+        <div class="step-content">
+          <p>Keep track of your bot's performance and make adjustments as needed.</p>
+          <ul>
+            <li>Check your dashboard regularly to monitor trades and profits</li>
+            <li>Review bot performance metrics and analytics</li>
+            <li>Adjust settings based on market conditions and results</li>
+            <li>Set up notifications for important events (optional)</li>
+            <li>Withdraw profits regularly or compound for growth</li>
+          </ul>
+          <div class="warning-box">
+            <strong>💡 Best Practice:</strong> Review bot performance at least once daily, especially during volatile market conditions.
+          </div>
+        </div>
+      </div>
+
+      <!-- Zeus Bot Optional Section -->
+      <div class="collapsible">
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <div>
+            <h3 style="margin: 0; color: var(--color-gold);">⚡ Optional: Zeus Bot (Telegram-Based Trading)</h3>
+            <p style="margin: 0; color: var(--color-text-muted); font-size: 0.875rem;">Click to expand</p>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <div style="padding: var(--spacing-md) 0;">
+            <p style="color: var(--color-text-secondary);">
+              Zeus Bot allows you to trade directly through Telegram for mobile-first convenience.
+            </p>
+            <h4 style="color: var(--color-gold); margin-top: var(--spacing-lg);">Setup Steps:</h4>
+            <ul style="color: var(--color-text-secondary);">
+              <li>Search for the official Aurum Zeus Bot on Telegram</li>
+              <li>Start a conversation with /start command</li>
+              <li>Link your Aurum account using the provided authentication code</li>
+              <li>Configure trading parameters through the Telegram interface</li>
+              <li>Use commands like /trade, /balance, /stop to control the bot</li>
+            </ul>
+            <div class="warning-box" style="margin-top: var(--spacing-md);">
+              <strong>⚠️ Security:</strong> Only use the official Zeus Bot. Verify the bot's authenticity before linking your account.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section" style="background-color: var(--color-bg-secondary);">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to Get Started?</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--spacing-xl) auto; color: var(--color-text-secondary);">
+        Follow the steps above to set up your account and start trading with EX-AI Bot today.
+      </p>
+      <a href="#" class="btn btn-primary btn-large" data-ref-cta>
+        Create Your Account
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>AURUM</h4>
+          <p class="text-muted">
+            Advanced AI trading solutions.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="bots.html" class="footer-link">Trading Bots</a></li>
+            <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aurum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Referral System Script -->
+  <script src="../assets/ref.js"></script>
+  
+  <!-- Collapsible Logic -->
+  <script>
+    function toggleCollapsible(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.toggle-icon');
+      
+      content.classList.toggle('active');
+      icon.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
