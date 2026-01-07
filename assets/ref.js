@@ -5,7 +5,8 @@
 
 const AurumReferral = {
   STORAGE_KEY: 'aurum_referral',
-  DEFAULT_LINK: 'https://example.com/default',
+  // Default link - update this to your actual signup URL in production
+  DEFAULT_LINK: 'https://example.com/signup',
   
   /**
    * Initialize referral tracking on page load
